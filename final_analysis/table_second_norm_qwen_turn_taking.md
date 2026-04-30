@@ -1,0 +1,22 @@
+| model | environment | role_mode | prompt_variant | condition | runs | mean_uB_minus_uA | sd_uB_minus_uA | mean_valid_reports | sd_valid_reports | mean_report_precision | sd_report_precision | mean_violation_rate_per_round | sd_violation_rate_per_round |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| qwen3:8b | turn_taking_two_stage | explicit_roles | v3 | NORMAL | 30 | 3.1333 | 0.4989 | 0 | 0.0 | 0.0 | 0.0 | 1.9667 | 0.1043 |
+| qwen3:8b | turn_taking_two_stage | explicit_roles | v3 | TEMPTATION | 30 | 7.6 | 0.9165 | 0 | 0.0 | 0.0 | 0.0 | 1.1 | 0.1342 |
+| qwen3:8b | turn_taking_two_stage | explicit_roles | v3 | ENFORCEMENT | 30 | -2.4333 | 3.1057 | 3.4333 | 0.4955 | 1.0 | 0.0 | 0.8267 | 0.2407 |
+| qwen3:8b | turn_taking_two_stage | explicit_roles | v3 | COSTLY_ENFORCEMENT | 30 | -3.1667 | 0.8596 | 3.6667 | 0.6498 | 1.0 | 0.0 | 0.7533 | 0.1231 |
+| qwen3:8b | turn_taking_two_stage | explicit_roles | v3 | NOISY_ENFORCEMENT | 30 | 3.6667 | 4.0277 | 2.2333 | 0.9195 | 0.9167 | 0.2267 | 1.0467 | 0.2667 |
+| qwen3:8b | turn_taking_two_stage | light_roles | v3 | NORMAL | 30 | -0.1667 | 0.6872 | 0 | 0.0 | 0.0 | 0.0 | 1.36 | 0.2215 |
+| qwen3:8b | turn_taking_two_stage | light_roles | v3 | TEMPTATION | 30 | 1.2667 | 0.6799 | 0 | 0.0 | 0.0 | 0.0 | 1.2 | 0.2921 |
+| qwen3:8b | turn_taking_two_stage | light_roles | v3 | ENFORCEMENT | 30 | 5.6 | 4.2474 | 2.2 | 0.7916 | 1.0 | 0.0 | 1.14 | 0.3105 |
+| qwen3:8b | turn_taking_two_stage | light_roles | v3 | COSTLY_ENFORCEMENT | 30 | 5.3667 | 1.9576 | 1.2333 | 0.5588 | 0.9333 | 0.2494 | 0.98 | 0.2272 |
+| qwen3:8b | turn_taking_two_stage | light_roles | v3 | NOISY_ENFORCEMENT | 30 | 1.8 | 3.0265 | 1 | 0.8165 | 0.65 | 0.45 | 1.12 | 0.1973 |
+| qwen3:8b | turn_taking_two_stage | uniform | v3 | NORMAL | 30 | -1.8667 | 0.8055 | 0 | 0.0 | 0.0 | 0.0 | 1.3367 | 0.1103 |
+| qwen3:8b | turn_taking_two_stage | uniform | v3 | TEMPTATION | 30 | 0 | 0.0 | 0 | 0.0 | 0.0 | 0.0 | 2.0 | 0.0 |
+| qwen3:8b | turn_taking_two_stage | uniform | v3 | ENFORCEMENT | 30 | 4.6667 | 2.1807 | 2.4667 | 0.6182 | 1.0 | 0.0 | 1.6217 | 0.182 |
+| qwen3:8b | turn_taking_two_stage | uniform | v3 | COSTLY_ENFORCEMENT | 30 | 3.2 | 1.579 | 1.2 | 0.4761 | 1.0 | 0.0 | 1.4217 | 0.3678 |
+| qwen3:8b | turn_taking_two_stage | uniform | v3 | NOISY_ENFORCEMENT | 30 | 2.9 | 3.6638 | 1.5667 | 0.9894 | 0.7333 | 0.3809 | 1.5267 | 0.0964 |
+| qwen3:8b | turn_taking_two_stage | random | v1 | NORMAL | 30 | 0.2 | 1.376 | 0 | 0.0 | 0.0 | 0.0 | 0.9267 | 0.3558 |
+| qwen3:8b | turn_taking_two_stage | random | v1 | TEMPTATION | 30 | 0.2 | 1.376 | 0 | 0.0 | 0.0 | 0.0 | 0.9267 | 0.3558 |
+| qwen3:8b | turn_taking_two_stage | random | v1 | ENFORCEMENT | 30 | -1.0667 | 3.6417 | 1.7667 | 0.9551 | 0.9 | 0.3 | 0.9533 | 0.2667 |
+| qwen3:8b | turn_taking_two_stage | random | v1 | COSTLY_ENFORCEMENT | 30 | -1.0667 | 3.6417 | 1.7667 | 0.9551 | 0.9 | 0.3 | 0.9533 | 0.2667 |
+| qwen3:8b | turn_taking_two_stage | random | v1 | NOISY_ENFORCEMENT | 30 | -0.2 | 2.8095 | 1.2667 | 0.9978 | 0.7333 | 0.4422 | 0.9533 | 0.286 |

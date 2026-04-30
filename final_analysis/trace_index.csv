@@ -1,0 +1,5 @@
+trace_name,model,environment,role_mode,prompt_variant,condition,seed,path
+qwen_resource_explicit_v3_temptation,qwen3:8b,resource_two_stage,explicit_roles,v3,TEMPTATION,20,/data/manikm/manik/normbench_v06/final_analysis/qwen_resource_explicit_v3_temptation.json
+qwen_resource_explicit_v3_enforcement,qwen3:8b,resource_two_stage,explicit_roles,v3,ENFORCEMENT,0,/data/manikm/manik/normbench_v06/final_analysis/qwen_resource_explicit_v3_enforcement.json
+qwen_resource_explicit_v3_noisy,qwen3:8b,resource_two_stage,explicit_roles,v3,NOISY_ENFORCEMENT,2,/data/manikm/manik/normbench_v06/final_analysis/qwen_resource_explicit_v3_noisy.json
+qwen_turn_explicit_v3_enforcement,qwen3:8b,turn_taking_two_stage,explicit_roles,v3,ENFORCEMENT,0,/data/manikm/manik/normbench_v06/final_analysis/qwen_turn_explicit_v3_enforcement.json

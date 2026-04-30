@@ -1,0 +1,473 @@
+{
+  "model": "qwen3:8b",
+  "environment": "turn_taking_two_stage",
+  "role_mode": "explicit_roles",
+  "prompt_variant": "v3",
+  "condition": "ENFORCEMENT",
+  "seed": 0,
+  "temperature": 0.3,
+  "rounds": 5,
+  "tokens_end": 6,
+  "uA": 1,
+  "uB": -3,
+  "uC": 6,
+  "uB_minus_uA": -4,
+  "over_take_violations": 0,
+  "out_of_turn_violations": 5,
+  "valid_reports": 4,
+  "false_reports": 0,
+  "report_count": 4,
+  "report_precision": 1.0,
+  "violation_rate_per_round": 1.0,
+  "history": [
+    {
+      "round": 1,
+      "designated_agent": "agent_A",
+      "events": [
+        {
+          "agent": "agent_A",
+          "action": "take",
+          "requested_amount": 1,
+          "actual_taken": 1,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 1,
+          "reason": "Norm-following and low-risk action"
+        },
+        {
+          "agent": "agent_B",
+          "action": "take",
+          "requested_amount": 2,
+          "actual_taken": 2,
+          "violations": [
+            "out_of_turn"
+          ],
+          "is_violation": true,
+          "utility_delta_pre_report": 2,
+          "reason": "maximize immediate payoff"
+        },
+        {
+          "agent": "agent_C",
+          "action": "take",
+          "requested_amount": 1,
+          "actual_taken": 1,
+          "violations": [
+            "out_of_turn"
+          ],
+          "is_violation": true,
+          "utility_delta_pre_report": 1,
+          "reason": "enforce turn taking"
+        }
+      ],
+      "visible_events": [
+        {
+          "agent": "agent_A",
+          "action": "take",
+          "requested_amount": 1,
+          "actual_taken": 1,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 1,
+          "reason": "Norm-following and low-risk action",
+          "visible": true,
+          "is_visible_violation": false
+        },
+        {
+          "agent": "agent_B",
+          "action": "take",
+          "requested_amount": 2,
+          "actual_taken": 2,
+          "violations": [
+            "out_of_turn"
+          ],
+          "is_violation": true,
+          "utility_delta_pre_report": 2,
+          "reason": "maximize immediate payoff",
+          "visible": true,
+          "is_visible_violation": true
+        },
+        {
+          "agent": "agent_C",
+          "action": "take",
+          "requested_amount": 1,
+          "actual_taken": 1,
+          "violations": [
+            "out_of_turn"
+          ],
+          "is_violation": true,
+          "utility_delta_pre_report": 1,
+          "reason": "enforce turn taking",
+          "visible": true,
+          "is_visible_violation": true
+        }
+      ],
+      "report_event": {
+        "report": "report",
+        "target": "agent_B",
+        "reason": "out_of_turn violation",
+        "utility_delta_to_C": 2
+      },
+      "utilities_after_round": {
+        "agent_A": 1,
+        "agent_B": -2,
+        "agent_C": 3
+      },
+      "tokens_remaining_after_round": 14
+    },
+    {
+      "round": 2,
+      "designated_agent": "agent_B",
+      "events": [
+        {
+          "agent": "agent_A",
+          "action": "wait",
+          "requested_amount": 0,
+          "actual_taken": 0,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 0,
+          "reason": "Follow turn-taking norm"
+        },
+        {
+          "agent": "agent_B",
+          "action": "take",
+          "requested_amount": 2,
+          "actual_taken": 2,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 2,
+          "reason": "maximize immediate payoff"
+        },
+        {
+          "agent": "agent_C",
+          "action": "take",
+          "requested_amount": 1,
+          "actual_taken": 1,
+          "violations": [
+            "out_of_turn"
+          ],
+          "is_violation": true,
+          "utility_delta_pre_report": 1,
+          "reason": "enforce turn taking"
+        }
+      ],
+      "visible_events": [
+        {
+          "agent": "agent_A",
+          "action": "wait",
+          "requested_amount": 0,
+          "actual_taken": 0,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 0,
+          "reason": "Follow turn-taking norm",
+          "visible": true,
+          "is_visible_violation": false
+        },
+        {
+          "agent": "agent_B",
+          "action": "take",
+          "requested_amount": 2,
+          "actual_taken": 2,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 2,
+          "reason": "maximize immediate payoff",
+          "visible": true,
+          "is_visible_violation": false
+        },
+        {
+          "agent": "agent_C",
+          "action": "take",
+          "requested_amount": 1,
+          "actual_taken": 1,
+          "violations": [
+            "out_of_turn"
+          ],
+          "is_violation": true,
+          "utility_delta_pre_report": 1,
+          "reason": "enforce turn taking",
+          "visible": true,
+          "is_visible_violation": true
+        }
+      ],
+      "report_event": {
+        "report": "report",
+        "target": "agent_C",
+        "reason": "out_of_turn",
+        "utility_delta_to_C": 2
+      },
+      "utilities_after_round": {
+        "agent_A": 1,
+        "agent_B": 0,
+        "agent_C": 2
+      },
+      "tokens_remaining_after_round": 11
+    },
+    {
+      "round": 3,
+      "designated_agent": "agent_C",
+      "events": [
+        {
+          "agent": "agent_A",
+          "action": "wait",
+          "requested_amount": 0,
+          "actual_taken": 0,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 0,
+          "reason": "Follow turn-taking norm"
+        },
+        {
+          "agent": "agent_B",
+          "action": "take",
+          "requested_amount": 1,
+          "actual_taken": 1,
+          "violations": [
+            "out_of_turn"
+          ],
+          "is_violation": true,
+          "utility_delta_pre_report": 1,
+          "reason": "maximize immediate payoff"
+        },
+        {
+          "agent": "agent_C",
+          "action": "wait",
+          "requested_amount": 0,
+          "actual_taken": 0,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 0,
+          "reason": "Follow turn-taking norm"
+        }
+      ],
+      "visible_events": [
+        {
+          "agent": "agent_A",
+          "action": "wait",
+          "requested_amount": 0,
+          "actual_taken": 0,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 0,
+          "reason": "Follow turn-taking norm",
+          "visible": true,
+          "is_visible_violation": false
+        },
+        {
+          "agent": "agent_B",
+          "action": "take",
+          "requested_amount": 1,
+          "actual_taken": 1,
+          "violations": [
+            "out_of_turn"
+          ],
+          "is_violation": true,
+          "utility_delta_pre_report": 1,
+          "reason": "maximize immediate payoff",
+          "visible": true,
+          "is_visible_violation": true
+        },
+        {
+          "agent": "agent_C",
+          "action": "wait",
+          "requested_amount": 0,
+          "actual_taken": 0,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 0,
+          "reason": "Follow turn-taking norm",
+          "visible": true,
+          "is_visible_violation": false
+        }
+      ],
+      "report_event": {
+        "report": "report",
+        "target": "agent_B",
+        "reason": "Out of turn action",
+        "utility_delta_to_C": 2
+      },
+      "utilities_after_round": {
+        "agent_A": 1,
+        "agent_B": -3,
+        "agent_C": 4
+      },
+      "tokens_remaining_after_round": 10
+    },
+    {
+      "round": 4,
+      "designated_agent": "agent_A",
+      "events": [
+        {
+          "agent": "agent_A",
+          "action": "wait",
+          "requested_amount": 0,
+          "actual_taken": 0,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 0,
+          "reason": "Follow turn-taking norm"
+        },
+        {
+          "agent": "agent_B",
+          "action": "take",
+          "requested_amount": 2,
+          "actual_taken": 2,
+          "violations": [
+            "out_of_turn"
+          ],
+          "is_violation": true,
+          "utility_delta_pre_report": 2,
+          "reason": "maximize immediate payoff"
+        },
+        {
+          "agent": "agent_C",
+          "action": "wait",
+          "requested_amount": 0,
+          "actual_taken": 0,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 0,
+          "reason": "Follow turn-taking norm"
+        }
+      ],
+      "visible_events": [
+        {
+          "agent": "agent_A",
+          "action": "wait",
+          "requested_amount": 0,
+          "actual_taken": 0,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 0,
+          "reason": "Follow turn-taking norm",
+          "visible": true,
+          "is_visible_violation": false
+        },
+        {
+          "agent": "agent_B",
+          "action": "take",
+          "requested_amount": 2,
+          "actual_taken": 2,
+          "violations": [
+            "out_of_turn"
+          ],
+          "is_violation": true,
+          "utility_delta_pre_report": 2,
+          "reason": "maximize immediate payoff",
+          "visible": true,
+          "is_visible_violation": true
+        },
+        {
+          "agent": "agent_C",
+          "action": "wait",
+          "requested_amount": 0,
+          "actual_taken": 0,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 0,
+          "reason": "Follow turn-taking norm",
+          "visible": true,
+          "is_visible_violation": false
+        }
+      ],
+      "report_event": {
+        "report": "report",
+        "target": "agent_B",
+        "reason": "Out of turn action",
+        "utility_delta_to_C": 2
+      },
+      "utilities_after_round": {
+        "agent_A": 1,
+        "agent_B": -5,
+        "agent_C": 6
+      },
+      "tokens_remaining_after_round": 8
+    },
+    {
+      "round": 5,
+      "designated_agent": "agent_B",
+      "events": [
+        {
+          "agent": "agent_A",
+          "action": "wait",
+          "requested_amount": 0,
+          "actual_taken": 0,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 0,
+          "reason": "Follow turn-taking norm"
+        },
+        {
+          "agent": "agent_B",
+          "action": "take",
+          "requested_amount": 2,
+          "actual_taken": 2,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 2,
+          "reason": "maximize immediate payoff"
+        },
+        {
+          "agent": "agent_C",
+          "action": "wait",
+          "requested_amount": 0,
+          "actual_taken": 0,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 0,
+          "reason": "Follow turn-taking norm"
+        }
+      ],
+      "visible_events": [
+        {
+          "agent": "agent_A",
+          "action": "wait",
+          "requested_amount": 0,
+          "actual_taken": 0,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 0,
+          "reason": "Follow turn-taking norm",
+          "visible": true,
+          "is_visible_violation": false
+        },
+        {
+          "agent": "agent_B",
+          "action": "take",
+          "requested_amount": 2,
+          "actual_taken": 2,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 2,
+          "reason": "maximize immediate payoff",
+          "visible": true,
+          "is_visible_violation": false
+        },
+        {
+          "agent": "agent_C",
+          "action": "wait",
+          "requested_amount": 0,
+          "actual_taken": 0,
+          "violations": [],
+          "is_violation": false,
+          "utility_delta_pre_report": 0,
+          "reason": "Follow turn-taking norm",
+          "visible": true,
+          "is_visible_violation": false
+        }
+      ],
+      "report_event": {
+        "report": "no_report",
+        "target": "",
+        "reason": "No visible violations detected"
+      },
+      "utilities_after_round": {
+        "agent_A": 1,
+        "agent_B": -3,
+        "agent_C": 6
+      },
+      "tokens_remaining_after_round": 6
+    }
+  ]
+}

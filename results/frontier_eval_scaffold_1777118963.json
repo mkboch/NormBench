@@ -1,0 +1,15 @@
+{
+  "note": "Add API-backed frontier model runs here when credentials and budget are available.",
+  "suggested_models": [
+    "gpt-4o",
+    "claude-sonnet",
+    "gemini-2.5-pro"
+  ],
+  "required_fields": [
+    "model_name",
+    "api_runtime",
+    "temperature",
+    "max_tokens",
+    "cost_tracking"
+  ]
+}

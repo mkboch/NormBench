@@ -1,0 +1,9 @@
+{
+  "frozen_run_file": "/data/manikm/manik/normbench_v06/results/normbench_v06_runs_1777118963.json",
+  "main_table_rows": 20,
+  "prompt_table_rows": 15,
+  "turn_table_rows": 20,
+  "llama_table_rows": 20,
+  "pairwise_test_rows": 8,
+  "trace_count": 4
+}
